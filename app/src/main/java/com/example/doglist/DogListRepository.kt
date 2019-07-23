@@ -1,10 +1,10 @@
 package com.example.doglist
 
 import com.example.doglist.data.Dog
+import com.example.doglist.data.remote.DogApi
+import javax.inject.Inject
 
-class DogListRepository {
+class DogListRepository @Inject constructor(private val dogApi: DogApi) {
 
-    fun getRandomDogs(): List<Dog>? {
-        return null
-    }
+    suspend fun getRandomDogs() = dogApi.getRandomDogs()
 }

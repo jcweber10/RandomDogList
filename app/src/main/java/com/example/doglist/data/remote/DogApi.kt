@@ -1,6 +1,6 @@
 package com.example.doglist.data.remote
 
-import com.example.doglist.data.Dog
+import com.example.doglist.data.DogListResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -10,5 +10,5 @@ interface DogApi {
     }
 
     @GET("breeds/image/random/{count}")
-    suspend fun getRandomDogs(@Path("count") count: Int = 50): List<Dog>
+    suspend fun getDogs(@Path("count") count: Int = 50): DogListResponse
 }
